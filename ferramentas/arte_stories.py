@@ -31,7 +31,7 @@ pagina = f"""<!doctype html><meta charset=utf-8><style>
 .d{{font:{34 if FEED else 44}px/1 "Liberation Sans",sans-serif;color:#76675b;text-decoration:line-through;margin-top:{14 if FEED else 24}px}}
 .r{{font:600 30px/1 "Liberation Sans",sans-serif;color:#76675b;margin-top:18px}}
 .p{{font:700 {78 if FEED else 104}px/1.1 "Liberation Sans",sans-serif;color:#843c20;margin-top:{6 if FEED else 12}px}}
-</style><div class=t>{TITULO}</div><div class=f>{foto}<span class=s>-{e(desc)}%</span></div><div class=n>{e(nome)}</div><div class=d>De {e(de)}</div><div class=p>Por {e(por)}</div>{"<div class=r>@consultora_virlainelima · Link no perfil</div>" if FEED else ""}"""
+</style><div class=t>{TITULO}</div><div class=f>{foto}<span class=s>-{e(desc)}%</span></div><div class=n>{e(nome)}</div><div class=d>De {e(de)}</div><div class=p>Por {e(por)}</div>{"<div class=r>@consultora_virlainelima · Link na bio</div>" if FEED else ""}"""
 h = os.path.abspath(saida) + ".html"
 open(h, "w", encoding="utf8").write(pagina)
 js = f"const {{chromium}}=require('playwright');(async()=>{{const b=await chromium.launch();const p=await b.newPage({{viewport:{{width:1080,height:{ALT}}}}});await p.goto('file://{h}');await p.screenshot({{path:{json.dumps(saida)}}});await b.close()}})()"
