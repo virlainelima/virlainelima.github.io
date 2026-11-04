@@ -1,6 +1,30 @@
 {
- "atualizado": "2026-11-03T17:10:00-03:00",
+ "atualizado": "2026-11-04T06:46:00-03:00",
  "ofertas": [
+  {
+   "nome": "Shower Gel 4 em 1 Cabelo, Barba, Rosto e Corpo Natura Homem Essence",
+   "de": "R$ 39,90",
+   "por": "R$ 11,97",
+   "desconto": 70,
+   "link": "https://www.minhaloja.natura.com/p/shower-gel-4-em-1-cabelo-barba-rosto-e-corpo-natura-homem-essence-100-g/NATBRA-217740?consultoria=virlainelima",
+   "imagem": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw87850f2b/NATBRA-217740_1.jpg?sw=600&q=80"
+  },
+  {
+   "nome": "Creme Desodorante Hidratante para o Corpo Ekos Cumaru",
+   "de": "R$ 67,42",
+   "por": "R$ 31,69",
+   "desconto": 53,
+   "link": "https://www.minhaloja.natura.com/p/creme-desodorante-hidratante-para-o-corpo-ekos-cumaru-250-ml/NATBRA-190449?consultoria=virlainelima",
+   "imagem": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw5d547b17/Produtos/NATBRA-190449_1.jpg?sw=600&q=80"
+  },
+  {
+   "nome": "Spray de Ambientes Erva Doce Casa",
+   "de": "R$ 79,90",
+   "por": "R$ 39,95",
+   "desconto": 50,
+   "link": "https://www.minhaloja.natura.com/p/spray-de-ambientes-erva-doce-casa-200-ml/NATBRA-171123?consultoria=virlainelima",
+   "imagem": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw4d194d9a/NATBRA-171123_1.jpg?sw=600&q=80"
+  },
   {
    "nome": "Óleo Trifásico Desodorante Corporal Ekos Pitanga",
    "de": "R$ 99,90",
