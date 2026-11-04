@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ofertas de hoje | Virlaine Lima</title>
+<meta name="description" content="Ofertas selecionadas pela consultora Virlaine Lima.">
+<style>
+:root{--bg:#f8f2e9;--card:#fffdf9;--ink:#33261d;--soft:#76675b;--line:#e8dccb;--brand:#a4502e;--brand-dark:#843c20;--gold:#b8892f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+header{padding:32px 16px 22px;text-align:center}
+.eyebrow{font:600 12px/1.4 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+h1{margin:8px 0 6px;font-size:34px;line-height:1.1;font-weight:500}
+.sub{margin:0 auto;max-width:30em;font:15px/1.45 system-ui,sans-serif;color:var(--soft)}
+main{max-width:980px;margin:0 auto;padding:0 16px 28px;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+.oferta{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.foto{position:relative;aspect-ratio:1;background:#fff}
+.foto img{width:100%;height:100%;object-fit:contain;display:block}
+.selo{position:absolute;top:10px;left:10px;background:var(--brand);color:#fff;font:700 13px/1 system-ui,sans-serif;padding:7px 9px;border-radius:999px}
+.info{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+h2{margin:0;font-size:18px;line-height:1.25;font-weight:500}
+.de{font:14px/1.2 system-ui,sans-serif;color:var(--soft);text-decoration:line-through}
+.por{font:700 25px/1.1 system-ui,sans-serif;color:var(--brand-dark)}
+.comprar{margin-top:auto;display:block;padding:14px;border-radius:10px;background:var(--brand);color:#fff;text-align:center;text-decoration:none;font:700 16px/1 system-ui,sans-serif}
+.comprar:hover,.comprar:focus-visible{background:var(--brand-dark)}
+.estado{grid-column:1/-1;padding:28px 16px;text-align:center;font:16px/1.5 system-ui,sans-serif;color:var(--soft)}
+.estado a,footer a{color:var(--brand-dark);font-weight:600}
+footer{padding:0 16px 34px;text-align:center;font:13px/1.55 system-ui,sans-serif;color:var(--soft)}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Virlaine Lima · Consultora</div>
+  <h1>Ofertas de hoje</h1>
+  <p class="sub">Toque em Comprar no produto que você viu no post.</p>
+</header>
+<main id="lista"><p class="estado">Carregando as ofertas…</p></main>
+<footer>
+  <p id="atualizado"></p>
+  <p>Preços e estoque podem mudar. Confira o valor final na loja antes de pagar.</p>
+  <p>Dúvidas? <a href="https://ig.me/m/consultora_virlainelima">Fale comigo no direct</a> · <a href="https://www.minhaloja.natura.com/consultoria/virlainelima">Ver a loja completa</a></p>
+</footer>
+<script>
+(function(){
+  var lista=document.getElementById('lista');
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+  function seguro(u){return /^https:\/\//.test(u||'')}
+  function vazio(){
+    lista.textContent='';
+    var p=el('p','estado','As ofertas estão sendo atualizadas. ');
+    var a=el('a',null,'Ver a loja completa');
+    a.href='https://www.minhaloja.natura.com/consultoria/virlainelima';
+    p.appendChild(a);lista.appendChild(p);
+  }
+  fetch('ofertas.json?t='+Date.now(),{cache:'no-store'}).then(function(r){
+    if(!r.ok)throw new Error(r.status);return r.json();
+  }).then(function(d){
+    var of=(d.ofertas||[]).filter(function(o){return seguro(o.link)});
+    if(!of.length)return vazio();
+    lista.textContent='';
+    of.forEach(function(o){
+      var c=el('article','oferta'),f=el('div','foto'),i=el('div','info');
+      if(seguro(o.imagem)){
+        var im=el('img');im.src=o.imagem;im.alt=o.nome||'Produto';im.loading='lazy';
+        im.onerror=function(){im.remove()};f.appendChild(im);
+      }
+      if(o.desconto)f.appendChild(el('span','selo','-'+o.desconto+'%'));
+      i.appendChild(el('h2',null,o.nome));
+      if(o.de)i.appendChild(el('div','de','De '+o.de));
+      if(o.por)i.appendChild(el('div','por','Por '+o.por));
+      var a=el('a','comprar','Comprar');a.href=o.link;a.rel='noopener';i.appendChild(a);
+      c.appendChild(f);c.appendChild(i);lista.appendChild(c);
+    });
+    if(d.atualizado){
+      var t=new Date(d.atualizado);
+      if(!isNaN(t))document.getElementById('atualizado').textContent='Atualizado em '+t.toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'});
+    }
+  }).catch(vazio);
+})();
+</script>
+</body>
+</html>
