@@ -1,6 +1,30 @@
 {
- "atualizado": "2026-11-04T06:46:00-03:00",
+ "atualizado": "2026-11-06T17:30:00-03:00",
  "ofertas": [
+  {
+   "nome": "Deo Colônia Feminino Kriska Flores 100 ml",
+   "de": "R$ 169,90",
+   "por": "R$ 84,95",
+   "desconto": 50,
+   "link": "https://www.minhaloja.natura.com/p/desodorante-colonia-kriska-flores-100-ml/NATBRA-140405?consultoria=virlainelima",
+   "imagem": "https://static.metricool.com/planner/202611/7587914-file-5363426943025226351.jpeg"
+  },
+  {
+   "nome": "Esfoliante para o Corpo Tododia Morango e Baunilha Dourada",
+   "de": "R$ 50,90",
+   "por": "R$ 25,45",
+   "desconto": 50,
+   "link": "https://www.minhaloja.natura.com/p/esfoliante-para-o-corpo-tododia-morango-e-baunilha-dourada-190-g/NATBRA-219299?consultoria=virlainelima",
+   "imagem": "https://static.metricool.com/planner/202611/7587914-file-12395021942558302402.jpeg"
+  },
+  {
+   "nome": "Refil Máscara Força e Reparação Molecular Lumina",
+   "de": "R$ 59,90",
+   "por": "R$ 29,90",
+   "desconto": 50,
+   "link": "https://www.minhaloja.natura.com/p/refil-mascara-forca-e-reparacao-molecular-250-ml/NATBRA-164506?consultoria=virlainelima",
+   "imagem": "https://static.metricool.com/planner/202611/7587914-file-1291537168665050016.jpeg"
+  },
   {
    "nome": "Shower Gel 4 em 1 Cabelo, Barba, Rosto e Corpo Natura Homem Essence",
    "de": "R$ 39,90",
@@ -48,30 +72,6 @@
    "desconto": 50,
    "link": "https://www.minhaloja.natura.com/p/gel-de-banho-kaiak-urbe-masculino-100-g/NATBRA-148880?consultoria=virlainelima",
    "imagem": "https://static.metricool.com/planner/202611/7587914-file-9248677690067848684.jpeg"
-  },
-  {
-   "nome": "Desodorante Antitranspirante Roll-on Kaiak Oceano Feminino",
-   "de": "R$ 29,90",
-   "por": "R$ 14,95",
-   "desconto": 50,
-   "link": "https://www.minhaloja.natura.com/p/desodorante-antitranspirante-roll-on-kaiak-oceano-feminino-75-ml/NATBRA-189395?consultoria=virlainelima",
-   "imagem": "https://static.metricool.com/planner/202611/7587914-file-14400156875222106320.jpeg"
-  },
-  {
-   "nome": "Creme Nutritivo para o Corpo Tododia Folhas de Limão e Graviola",
-   "de": "R$ 56,90",
-   "por": "R$ 28,45",
-   "desconto": 50,
-   "link": "https://www.minhaloja.natura.com/p/creme-nutritivo-para-o-corpo-tododia-folhas-de-limao-e-graviola-200-ml/NATBRA-23149?consultoria=virlainelima",
-   "imagem": "https://static.metricool.com/planner/202611/7587914-file-7329907095701470914.jpeg"
-  },
-  {
-   "nome": "Spray de Pentear Lumina para Hidratação e Proteção Antipoluição",
-   "de": "R$ 82,90",
-   "por": "R$ 41,45",
-   "desconto": 50,
-   "link": "https://www.minhaloja.natura.com/p/spray-de-pentear-lumina-para-hidratacao-e-protecao-antipoluicao-150-ml/NATBRA-147434?consultoria=virlainelima",
-   "imagem": "https://static.metricool.com/planner/202611/7587914-file-12767600035495393047.jpeg"
   }
  ]
 }
