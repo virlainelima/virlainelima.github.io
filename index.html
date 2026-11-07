@@ -53,9 +53,19 @@ footer{padding:0 16px 34px;text-align:center;font:13px/1.55 system-ui,sans-serif
     a.href='https://www.minhaloja.natura.com/consultoria/virlainelima';
     p.appendChild(a);lista.appendChild(p);
   }
-  fetch('ofertas.json?t='+Date.now(),{cache:'no-store'}).then(function(r){
+  var SB='https://kusxudwenlkhizvruhkn.supabase.co/rest/v1/ofertas_virlaine?id=eq.1&select=dados';
+  var KEY='sb_publishable_NEh4LXzsVkmdmU0gEeIRIQ_iuomS-4G';
+  function doArquivo(){
+    return fetch('ofertas.json?t='+Date.now(),{cache:'no-store'}).then(function(r){
+      if(!r.ok)throw new Error(r.status);return r.json();
+    });
+  }
+  fetch(SB,{cache:'no-store',headers:{apikey:KEY}}).then(function(r){
     if(!r.ok)throw new Error(r.status);return r.json();
-  }).then(function(d){
+  }).then(function(rows){
+    if(rows&&rows[0]&&rows[0].dados&&(rows[0].dados.ofertas||[]).length)return rows[0].dados;
+    return doArquivo();
+  }).catch(doArquivo).then(function(d){
     var of=(d.ofertas||[]).filter(function(o){return seguro(o.link)});
     if(!of.length)return vazio();
     lista.textContent='';
